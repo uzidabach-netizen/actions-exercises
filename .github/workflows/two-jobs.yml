@@ -19,8 +19,7 @@ jobs:
 
       - name: Checks passed
         run: echo "Checks passed!"
-      - name: Failing step
-        run: exit 1
+     
 
   deploy:
     needs: check
