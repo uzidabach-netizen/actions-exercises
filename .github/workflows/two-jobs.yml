@@ -1,1 +1,31 @@
 
+name: Two Jobs Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run checks
+        run: echo "Running checks..."
+
+      - name: Wait 5 seconds
+        run: sleep 5
+
+      - name: Checks passed
+        run: echo "Checks passed!"
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying
+        run: echo "Deploying..."
+
+      - name: Deploy complete
+        run: echo "Deploy complete!"
