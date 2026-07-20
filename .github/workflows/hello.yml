@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   say-hello:
@@ -11,15 +12,3 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello from GitHub Actions!"
-
-      - name: Show Date
-        run: date
-
-      - name: Show OS Info
-        run: cat /etc/os-release
-
-      - name: Multi-line Script
-        run: |
-          echo "Step 1: Starting..."
-          echo "Step 2: Working..."
-          echo "Step 3: Done!"
